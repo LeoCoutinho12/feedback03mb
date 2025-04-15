@@ -6,18 +6,9 @@ export function App() {
   const [notaAvaliacao, setNotaAvaliacao] = useState(0)
   const [submited, setSubmited] = useState(false)
 
-  function handleSubmit() {
-    if (notaAvaliacao !== 0) {
-      setSubmited(true)
-      return
-    }
-
-    alert("Please, choose a note Coutinho!")
-  }
-
   return (
     submited === false ? (
-      <CardInicial setNotaAvaliacao={setNotaAvaliacao} handleSubmit={handleSubmit} />
+      <CardInicial setNotaAvaliacao={setNotaAvaliacao} setSubmited={setSubmited} notaAvaliacao={notaAvaliacao} />
     ) : (
       <CardFinal notaAvaliacao={notaAvaliacao} />
     )
